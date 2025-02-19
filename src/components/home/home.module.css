@@ -1,0 +1,19 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container button{
+    margin-top: 2%;
+    background: transparent;
+    height: 40px;
+    width: 150px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+.container button .link{
+    text-decoration: none;
+}

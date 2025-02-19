@@ -1,21 +1,23 @@
-import './App.css'
-import Home from './components/home'
-import Alunos from './components/alunos'
-import {BrowserRouter, Routes, Route,Link} from 'react-router-dom'
+import styles from './App.module.css'
+
+import Home from './components/home/home'
+import Alunos from './components/alunos/alunos'
+
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 
 function App() {
-  return(<>
+  return(<main className={styles.container}>
     <BrowserRouter>
-      <ul>
-        <li><Link to={"/"}>Home</Link></li>
-        <li><Link to={"/alunos"}>Cadastrar Alunos</Link></li>
+      <ul className={styles.navbar}>
+        <li><Link to={"/"} className={styles.link}>Home</Link></li>
+        <li><Link to={"/alunos"} className={styles.link}>Cadastrar Alunos</Link></li>
       </ul>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/alunos' element={<Alunos/>}/>
       </Routes>
     </BrowserRouter>
-  </>)
+  </main>)
 }
 
 export default App
