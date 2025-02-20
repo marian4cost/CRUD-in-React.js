@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "mariana",
+        "email": "mariana.costa.lisboa078@gmail.com",
+        "activation": true,
+        "course-student": null
+    },
+    {
+        "id": 1,
+        "name": "pedro",
+        "email": "pedro@gmail.com",
+        "activation": false,
+        "course-student": null
+    },
+    {
+        "id": 2,
+        "name": "luis",
+        "email": "luis.antonio@gmail.com",
+        "activation": true,
+        "course-student": "redes de computadores"
+    }
+]

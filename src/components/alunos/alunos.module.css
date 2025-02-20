@@ -6,3 +6,13 @@
     flex-direction: column;
     align-items: center;
 }
+.container h1{
+    margin-bottom: 5%;
+}
+.container table{
+    min-height: 10%;
+    width: 80%;
+}
+.container table thead tr, .container table tbody tr{
+    box-shadow: 0 1px #fff;
+}
