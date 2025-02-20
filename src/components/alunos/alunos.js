@@ -9,7 +9,8 @@ class Alunos extends React.Component{
         this.state = {
             alunos : [
                 {"id": 0, "name": "mariana", "email": "mariana.costa.lisboa078@gmail.com"},
-                {"id": 1, "name": "joão", "email": "joão@teste.com"}
+                {"id": 1, "name": "joão", "email": "joão@teste.com"},
+                {"id": 2, "name": "paula santos", "email": "paula-santos@teste.com"}
             ]
         }
     }
@@ -26,11 +27,13 @@ class Alunos extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>{this.state.alunos[0].name}</th>
-                        <th>{this.state.alunos[0].email}</th>
-                        <th>Atualizar ou Excluir</th>
-                    </tr>
+                    {this.state.alunos.map((aluno) => (
+                        <tr>
+                            <th>{aluno.name}</th>
+                            <th>{aluno.email}</th>
+                            <th>Atualizar ou Excluir</th>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </main>)
