@@ -7,13 +7,20 @@ class Alunos extends React.Component{
         super(props)
 
         this.state = {
-            alunos : [
-                {"id": 0, "name": "mariana", "email": "mariana.costa.lisboa078@gmail.com"},
-                {"id": 1, "name": "joão", "email": "joão@teste.com"},
-                {"id": 2, "name": "paula santos", "email": "paula-santos@teste.com"}
-            ]
+            students : []
         }
     }
+
+    componentDidMount(){
+        fetch("http://localhost:4000/student/")
+        .then(response => response.json())
+        .then(data => {this.setState({
+            students : data
+        })})
+
+        alert("dados puxados da api")
+    }
+    componentWillUnmount(){}
 
     render(){
         return(<main className={styles.container}>
@@ -27,10 +34,10 @@ class Alunos extends React.Component{
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.alunos.map((aluno) => (
+                    {this.state.students.map((student) => (
                         <tr>
-                            <th>{aluno.name}</th>
-                            <th>{aluno.email}</th>
+                            <th>{student.name}</th>
+                            <th>{student.email}</th>
                             <th>Atualizar ou Excluir</th>
                         </tr>
                     ))}

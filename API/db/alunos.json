@@ -1,23 +1,26 @@
-[
-    {
-        "id": 0,
-        "name": "mariana",
-        "email": "mariana.costa.lisboa078@gmail.com",
-        "activation": true,
-        "course-student": null
-    },
-    {
+{
+    "student": [
+      {
         "id": 1,
-        "name": "pedro",
-        "email": "pedro@gmail.com",
-        "activation": false,
-        "course-student": null
-    },
-    {
-        "id": 2,
-        "name": "luis",
-        "email": "luis.antonio@gmail.com",
+        "name": "Mariana Lisboa",
+        "email": "mariana.lisboa@email.com",
         "activation": true,
-        "course-student": "redes de computadores"
-    }
-]
+        "course-student": "Ciência da Computação"
+      },
+      {
+        "id": 2,
+        "name": "João Silva",
+        "email": "joao.silva@email.com",
+        "activation": false,
+        "course-student": "Engenharia de Software"
+      },
+      {
+        "id": 3,
+        "name": "Ana Souza",
+        "email": "ana.souza@email.com",
+        "activation": true,
+        "course-student": "Sistemas de Informação"
+      }
+    ]
+  }
+  
