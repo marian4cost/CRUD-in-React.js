@@ -11,7 +11,7 @@ class Alunos extends React.Component{
         }
     }
 
-    componentDidMount(){
+    getFunction(){
         fetch("http://localhost:4000/student/")
         .then(response => response.json())
         .then(data => {this.setState({
@@ -19,6 +19,11 @@ class Alunos extends React.Component{
         })})
 
         alert("dados puxados da api")
+    }
+    
+
+    componentDidMount(){
+        this.getFunction()
     }
     componentWillUnmount(){}
 
