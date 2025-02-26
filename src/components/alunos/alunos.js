@@ -35,11 +35,37 @@ class Alunos extends React.Component{
         })
     }
 
+    postFunction = (studentContent) => {
+        fetch("http://localhost:4000/student/", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(studentContent)
+        })
+        .then(response => {
+            if(response.ok){
+                this.getFunction()
+                alert("item adicionado com sucesso do banco")
+            }else{
+                alert("algo deu errado")
+            }
+        })
+    }
+
     atualizationName = (event) => {
         this.setState({name: event.target.value})
     }
     atualizationEmail = (event) => {
         this.setState({email: event.target.value})
+    }
+    submit = (event) => {
+        event.preventDefault()
+        
+        const studentContent = {
+            name: this.state.name,
+            email: this.state.email
+        }
+
+        this.postFunction(studentContent)
     }
 
     componentDidMount(){
@@ -49,12 +75,12 @@ class Alunos extends React.Component{
     render(){
         return(<main className={styles.container}>
             <h1>Página de execução</h1>
-            <form>
+            <form onSubmit={this.submit}>
                 <label>Nome:</label>
                 <input type="text" placeholder="digite o nome do aluno:" value={this.state.name} onChange={this.atualizationName}/>
                 <label>E-mail:</label>
                 <input type="text" placeholder="digite o e-mail do aluno:" value={this.state.email} onChange={this.atualizationEmail}/>
-                <button>Salvar</button>
+                <button type="submit">Salvar</button>
             </form>
             <table>
                 <thead>

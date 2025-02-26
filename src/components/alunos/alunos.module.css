@@ -16,3 +16,7 @@
 .container table thead tr, .container table tbody tr{
     box-shadow: 0 1px #fff;
 }
+/* depois ajustar */
+input, button{
+    color: #000
+}
