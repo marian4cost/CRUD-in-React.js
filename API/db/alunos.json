@@ -1,3 +1,14 @@
 {
-  "student": []
+  "student": [
+    {
+      "id": "1",
+      "name": "Mariana Lisboa",
+      "email": "mariana@email.com"
+    },
+    {
+      "id": "2",
+      "name": "Mariana Lisboa",
+      "email": "mariana@email.com"
+    }
+  ]
 }
