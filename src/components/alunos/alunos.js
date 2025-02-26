@@ -13,6 +13,7 @@ class Alunos extends React.Component{
         }
     }
 
+    // REQUISIÇÃO DO TIPO GET
     getFunction(){
         fetch("http://localhost:4000/student/")
         .then(response => response.json())
@@ -23,6 +24,7 @@ class Alunos extends React.Component{
         alert("dados puxados da api")
     }
 
+    // REQUISIÇÃO DO TIPO DELETE
     deleteFunction = (id) => {
         fetch("http://localhost:4000/student/"+id, {
             method: "DELETE"
@@ -35,6 +37,7 @@ class Alunos extends React.Component{
         })
     }
 
+    // REQUISIÇÃO DO TIPO POST
     postFunction = (studentContent) => {
         fetch("http://localhost:4000/student/", {
             method: "POST",
@@ -51,6 +54,7 @@ class Alunos extends React.Component{
         })
     }
 
+    // FUNÇÕES NECESSÁRIAS PARA REQUISIÇÕES DO TIPO POST
     atualizationName = (event) => {
         this.setState({name: event.target.value})
     }
@@ -68,6 +72,7 @@ class Alunos extends React.Component{
         this.postFunction(studentContent)
     }
 
+    // COMPONENTE DE REINICIALIZAÇÃO DE PÁGINA 9POR PADRÃO EXIBI O GET
     componentDidMount(){
         this.getFunction()
     }
@@ -75,13 +80,6 @@ class Alunos extends React.Component{
     render(){
         return(<main className={styles.container}>
             <h1>Página de execução</h1>
-            <form onSubmit={this.submit}>
-                <label>Nome:</label>
-                <input type="text" placeholder="digite o nome do aluno:" value={this.state.name} onChange={this.atualizationName}/>
-                <label>E-mail:</label>
-                <input type="text" placeholder="digite o e-mail do aluno:" value={this.state.email} onChange={this.atualizationEmail}/>
-                <button type="submit">Salvar</button>
-            </form>
             <table>
                 <thead>
                     <tr>
@@ -100,6 +98,13 @@ class Alunos extends React.Component{
                     ))}
                 </tbody>
             </table>
+            <form onSubmit={this.submit}>
+                <label>Nome:</label>
+                <input type="text" placeholder="digite o nome do aluno:" value={this.state.name} onChange={this.atualizationName}/>
+                <label>E-mail:</label>
+                <input type="text" placeholder="digite o e-mail do aluno:" value={this.state.email} onChange={this.atualizationEmail}/>
+                <button type="submit">Salvar</button>
+            </form>
         </main>)
     }
 }

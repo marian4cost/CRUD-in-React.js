@@ -16,7 +16,29 @@
 .container table thead tr, .container table tbody tr{
     box-shadow: 0 1px #fff;
 }
-/* depois ajustar */
-input, button{
-    color: #000
+.container form{
+    margin-top: 5%;
+    height: 30vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container form input{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background: transparent;
+    height: 4vh;
+    width: 250px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+.container form button{
+    margin-top: 2%;
+    background: transparent;
+    height: 40px;
+    width: 150px;
+    border: 1px solid #fff;
+    border-radius: 15px;
 }
