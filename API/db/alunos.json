@@ -1,23 +1,3 @@
 {
-  "student": [{
-    "id": 1,
-    "name": "Mariana Lisboa",
-    "email": "mariana.lisboa@email.com",
-    "activation": true,
-    "course-student": "Ciência da Computação"
-  },
-  {
-    "id": 2,
-    "name": "João Silva",
-    "email": "joao.silva@email.com",
-    "activation": false,
-    "course-student": "Engenharia de Software"
-  },
-  {
-    "id": 3,
-    "name": "Ana Souza",
-    "email": "ana.souza@email.com",
-    "activation": true,
-    "course-student": "Sistemas de Informação"
-  }]
+  "student": []
 }
