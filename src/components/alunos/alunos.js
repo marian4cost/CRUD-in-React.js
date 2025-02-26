@@ -21,15 +21,15 @@ class Alunos extends React.Component{
         alert("dados puxados da api")
     }
 
-    deleteFunction(id){
+    deleteFunction = (id) => {
         fetch("http://localhost:4000/student/"+id, {
             method: "DELETE"
         })
         .then(response => {
             if(response.ok){
                 this.getFunction()
+                alert("item deletado com sucesso do banco")
             }
-            alert("item deletado com sucesso do banco")
         })
     }
 
@@ -54,7 +54,7 @@ class Alunos extends React.Component{
                         <tr>
                             <th>{student.name}</th>
                             <th>{student.email}</th>
-                            <th>Atualizar ou Excluir</th>
+                            <th>Atualizar ou <button onClick={() => this.deleteFunction(student.id)}>Excluir</button></th>
                         </tr>
                     ))}
                 </tbody>
