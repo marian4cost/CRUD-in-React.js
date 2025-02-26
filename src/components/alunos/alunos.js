@@ -20,7 +20,18 @@ class Alunos extends React.Component{
 
         alert("dados puxados da api")
     }
-    
+
+    deleteFunction(id){
+        fetch("http://localhost:4000/student/"+id, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if(response.ok){
+                this.getFunction()
+            }
+            alert("item deletado com sucesso do banco")
+        })
+    }
 
     componentDidMount(){
         this.getFunction()
