@@ -71,6 +71,16 @@ class Alunos extends React.Component{
 
         this.postFunction(studentContent)
     }
+    // REQUISIÇÃO DO TIPO UPDATE
+    searchStudentData = (id) => {
+        fetch("http://localhost:4000/student/"+id, {method: "GET"})
+        .then(response => response.json())
+        .then(studentData => {this.setState({
+            id: studentData.id,
+            name: studentData.name,
+            email: studentData.email
+        })})
+    }
 
     // COMPONENTE DE REINICIALIZAÇÃO DE PÁGINA 9POR PADRÃO EXIBI O GET
     componentDidMount(){
@@ -93,7 +103,10 @@ class Alunos extends React.Component{
                         <tr>
                             <th>{student.name}</th>
                             <th>{student.email}</th>
-                            <th><button>Atualizar</button> <button onClick={() => this.deleteFunction(student.id)}>Excluir</button></th>
+                            <th>
+                                <button onClick={() => this.searchStudentData(student.id)}>Atualizar</button> 
+                                <button onClick={() => this.deleteFunction(student.id)}>Excluir</button>
+                            </th>
                         </tr>
                     ))}
                 </tbody>
