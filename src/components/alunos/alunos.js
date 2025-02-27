@@ -8,6 +8,7 @@ class Alunos extends React.Component{
 
         this.state = {
             students : [],
+            id: 0,
             name: "",
             email: ""
         }
@@ -64,14 +65,44 @@ class Alunos extends React.Component{
     submit = (event) => {
         event.preventDefault()
         
-        const studentContent = {
-            name: this.state.name,
-            email: this.state.email
+        if(this.state.id==0){
+            const studentContent = {
+                name: this.state.name,
+                email: this.state.email
+            }
+    
+            this.postFunction(studentContent)
+            alert("aluno novo")
+        }else{
+            const studentContent = {
+                id: this.state.id,
+                name: this.state.name,
+                email: this.state.email
+            }
+    
+            this.putFunction(studentContent)
+            alert("atualização do aluno")
         }
-
-        this.postFunction(studentContent)
     }
-    // REQUISIÇÃO DO TIPO UPDATE
+
+    // REQUISIÇÃO DO TIPO PUT
+    putFunction = (studentContent) => {
+        fetch("http://localhost:4000/student/"+studentContent.id, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(studentContent)
+        })
+        .then(response => {
+            if(response.ok){
+                this.getFunction()
+                alert("item atualizado com sucesso do banco")
+            }else{
+                alert("algo deu errado")
+            }
+        })
+    }
+
+    // FUNÇÃO NECESSÁRIA PARA ATUALIZAÇÃO DE DADOS
     searchStudentData = (id) => {
         fetch("http://localhost:4000/student/"+id, {method: "GET"})
         .then(response => response.json())
